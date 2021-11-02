@@ -2,6 +2,9 @@ import React from 'react';
 import './Email.css';
 import PropTypes from 'prop-types';
 
+import Globe from "../theme/icons/globe";
+import Icon from "../Icon/Icon";
+
 const Email=({email})=>{
 /*class Email extends Component {*/
     /*render() {*/
@@ -13,9 +16,15 @@ const Email=({email})=>{
                 today we have buy {email.topic} with price:
                 {email.head} UAH
                 {email.title}
+               {/* <Star color='red' filled='purple'/>
+                <Star color='black' filled='blue'/>
+                <Star color='orange' filled='red'/>*/}
+               <Globe/>
+
+               <Icon type='star' className='icon-star'/>
+               <Icon type='star' color='green' className='icon-star2'/>
+               <Icon type='global' className='icon-global'/>
             </li>);
-
-
 
 }
 //PropTypes
@@ -35,6 +44,18 @@ const Email=({email})=>{
                  topic:PropTypes.string
 }).isRequired,
     }
+
+/*
+Email.propTypes = {
+/!*email: PropTypes.string.isRequired,*!/
+/!*title: PropTypes.string.isRequired,*!/
+email: PropTypes.exact({
+    id:PropTypes.number.isRequired,
+    topic:PropTypes.string.isRequired,
+    body: PropTypes.string
+}).isRequired,
+}*/
+
 //возможные функции:
 //instanceOf, oneOf([1,2,3]), oneOfType([]), arrayOf//массив конкретных значений, shape,exact
 

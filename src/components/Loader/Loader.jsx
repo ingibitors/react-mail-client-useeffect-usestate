@@ -1,24 +1,24 @@
-import React, {Component} from 'react';
+import React, {useEffect} from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Spinner from 'react-bootstrap/Spinner'
 
 
-class Loader extends Component {
-    componentDidMount() {
-        console.log("didmount")
+const Loader=()=> {
+    useEffect(()=> {
+        console.log("Mounted loader")
+//return для размонтирования компонента,
+    return() =>{
+        console.log("UnMounting loader...")
     }
-    componentWillUnmount() {
-        console.log("willunmount")
-    }
+},[]);
 
-    render() {
-        return (
+        return  (
             <div className="loader">
                 <Spinner animation="grow" />
             </div>
         );
     }
-}
+
 
 export default Loader;

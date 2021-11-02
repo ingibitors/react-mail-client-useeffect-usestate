@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Email from "../Email/Email";
+import PropTypes from "prop-types";
 
 class Inbox extends Component {
     render() {
@@ -24,3 +25,6 @@ class Inbox extends Component {
 }
 
 export default Inbox;
+
+
+
