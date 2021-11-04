@@ -21,7 +21,15 @@ const App = () => {
     useEffect(() => {
         console.log('Executed after each render');
         setTimeout(() => {
-            axios('/emails.json')
+            //запрос за данными на сервер или на файл:
+            //если на файл то: '/emails.json'
+            //на сервер http://localhost:8000/api/emails
+            //и 3 вариант который решает ошибко с CORS єто когда остальная часть адреса указана в package.json:
+            // ,"proxy": "http://localhost:8000" - написано в конце package.json
+            //если указать как ниже, то запрос в первую очередь пойдет на тот сервер, на котором мы сейчас находимся, т.е. на http://localhost:3000/api/emails, если же там его (/api/emails) нет-
+            // то тогда наш backend http://localhost:3000 попробует отправить запрос на прокси сервер по адресу http://localhost:8000 и там его найти:
+
+            axios('/api/emails')
                 .then(res => {
                     setEmails(res.data);
                     setIsLoading(false);
